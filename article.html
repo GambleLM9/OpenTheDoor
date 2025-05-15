@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is closed.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="puzzle.js" defer></script>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }   
+        .header{
+            position: fixed;
+            width: 100%;
+            background-color: rgb(0, 174, 0);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1{
+            font-size: 2.5em;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            margin-right: 5px;
+            background-color: rgb(0, 234, 0);
+            border: 2px solid green;
+            border-radius: 25px;
+        }
+        .newsarticle{
+            display: flex;
+            flex-direction: column;
+        }
+        .newscontainer{
+            height: 100%;
+            padding-top: 10%;
+            font-size: 1.5em;
+        }
+        .newscontainer article{
+            width: 70%;
+            margin: 0 auto;
+        }
+        article h2{
+            background-color: rgb(228, 228, 228);
+            padding: 20px;
+            border-radius: 25px;
+        }
+        h3{
+            border-bottom: solid 2px rgb(228, 228, 228);
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .article1{
+            display: flex;
+            flex-direction: column;
+        }
+        .article1Section2{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+        .article2{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .article2Section2{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="newsarticle">
+            <header class="header">
+                <h1>CipherCentral News</h1>
+                <div>
+                    <p>"We always check at least twice."</p>
+                    <p>- Our founder, [REDACTED]</p>
+                </div>
+                <nav>
+                    <a href="/OpenTheDoor/error1.html">Home</a>
+                    <a href="/OpenTheDoor/archives.html">Archives</a>
+                    <a href="/OpenTheDoor/error2.html">Find Us</a>
+                    <a href="/OpenTheDoor/error3.html">Subscription</a>
+                    <a href="/OpenTheDoor/home.html">the door</a>
+                </nav>
+            </header>
+            <main class="newscontainer">
+                <article>
+                    <h2>Today's Headlines:</h2>
+                    <div class="article1" id="article1">
+                        <h3 id="article1Heading"></h3>
+                        <section class="article1Section1" id="article1Section1"></section>
+                        <section class="article1Section2" id="article1Section2"></section>
+                    </div>
+                    <div class="article2" id="article2">
+                        <h3 id="article2Heading"></h3>
+                        <section class="article2Section1" id="article2Section1"></section>
+                        <section class="article2Section2" id="article2Section2"></section>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+    <script>
+        let articles = [
+            {
+                id : 1,
+                heading : `ID 1`,
+                section1 : `ID1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quos, rem porro impedit unde repellendus repellat. Ex autem adipisci molestiae quisquam sunt cumque est commodi deserunt, iusto ratione animi eos illum aperiam eaque debitis obcaecati quidem facere harum illo tempora. Aspernatur rerum dolorum ipsum porro aliquam fugit beatae, atque et architecto perferendis. Ipsa quasi quos eligendi possimus fuga qui repellat quam perspiciatis fugit? Voluptas animi mollitia error, nemo ea dignissimos perspiciatis impedit iure id ab dolor corporis facere nostrum dolore molestiae numquam non, atque eaque voluptatem? Aut dolor quibusdam earum deserunt rerum maxime ad optio recusandae? Voluptas, libero quaerat.
+                `,
+                section2 : `
+                ID1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim aperiam? Optio temporibus dolorem eaque in aspernatur qui id, accusamus earum cumque eum? Libero, est. Repellat eaque vel, illo, alias molestias perferendis cumque hic voluptatibus voluptates sapiente ratione est sit accusantium aliquam mollitia repudiandae molestiae eligendi omnis. Maxime libero perspiciatis molestias minus quidem praesentium cumque dicta doloribus doloremque voluptas quam quibusdam, quas, iusto reiciendis aut cum dignissimos sint. Eveniet debitis ratione facilis, perferendis esse aperiam facere obcaecati, laboriosam vel culpa veritatis libero ullam ducimus voluptatum nesciunt maiores dolore consequatur voluptatem repellendus quam eaque assumenda numquam? Ipsa nisi similique pariatur eos."
+                `
+            },
+            {
+                id : 2,
+                heading : `Vernal Isle Salt Factory shuts down after inspection!`,
+                section1 : `Several stores are contemplating their supply of salt this morning with the news that hit the [county] County in [state] today: Vernal Isle Salt Factory, a production site relied on by many local businesses and stores, has been shut down and closed indefinitely. [owner] founded the company Vernal Isle in [year], and after facing some initial difficulties in money and supplies, they had eventually managed to build a proper salt factory and rise among the ranks, growing to a reliable supplier of salt for all stores in the area, even reaching out beyond it's home county and branching out steadily across the entire state, with their transportation methods evolving and even planning to open up more locations as well. This cemented Vernal Isle as a trustworthy and reliable company, but apparently that wasn't the case behind the scenes.
+                `,
+                section2 : `
+                The factory had apparently been long overdue a safety inspection, according to [inspector], a safety inspector for the Occupational Safety and Health Association (OSHA), who we reached out to personally to provide details. OSHA scheduled an inspection for [initial day], almost 2 years ago by now. However, around that time, an unprecedented storm had rolled in, creating severe flooding for several days. OSHA was unable to conduct the safety inspection, and had to reschedule it for a later time. Around a year later, the inspection had been scheduled for [month], but Vernal Isle had to postpone the inspection due to what was described at the time as "severe internal issues that had threatened the company itself." OSHA complied and rescheduled again, but another storm had rolled in then, causing severe damages in the local industrial areas and forcing OSHA to, yet again, reschedule the inspection. Finally, the inspection came around last week on [final day], and what they found wasn't pretty. A full report is to be made available on OSHA's website later today, but we're told that it has to do with "extremely unsafe and unsanitary conditions, only possible if they had rushed the building process."
+                `
+            },
+            {
+                id : 3,
+                heading : `ID 3`,
+                section1 : `ID3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quos, rem porro impedit unde repellendus repellat. Ex autem adipisci molestiae quisquam sunt cumque est commodi deserunt, iusto ratione animi eos illum aperiam eaque debitis obcaecati quidem facere harum illo tempora. Aspernatur rerum dolorum ipsum porro aliquam fugit beatae, atque et architecto perferendis. Ipsa quasi quos eligendi possimus fuga qui repellat quam perspiciatis fugit? Voluptas animi mollitia error, nemo ea dignissimos perspiciatis impedit iure id ab dolor corporis facere nostrum dolore molestiae numquam non, atque eaque voluptatem? Aut dolor quibusdam earum deserunt rerum maxime ad optio recusandae? Voluptas, libero quaerat.
+                `,
+                section2 : `
+                ID3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim aperiam? Optio temporibus dolorem eaque in aspernatur qui id, accusamus earum cumque eum? Libero, est. Repellat eaque vel, illo, alias molestias perferendis cumque hic voluptatibus voluptates sapiente ratione est sit accusantium aliquam mollitia repudiandae molestiae eligendi omnis. Maxime libero perspiciatis molestias minus quidem praesentium cumque dicta doloribus doloremque voluptas quam quibusdam, quas, iusto reiciendis aut cum dignissimos sint. Eveniet debitis ratione facilis, perferendis esse aperiam facere obcaecati, laboriosam vel culpa veritatis libero ullam ducimus voluptatum nesciunt maiores dolore consequatur voluptatem repellendus quam eaque assumenda numquam? Ipsa nisi similique pariatur eos."
+                `
+            },
+            {
+                id : 4,
+                heading : `ID 4`,
+                section1 : `ID4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quos, rem porro impedit unde repellendus repellat. Ex autem adipisci molestiae quisquam sunt cumque est commodi deserunt, iusto ratione animi eos illum aperiam eaque debitis obcaecati quidem facere harum illo tempora. Aspernatur rerum dolorum ipsum porro aliquam fugit beatae, atque et architecto perferendis. Ipsa quasi quos eligendi possimus fuga qui repellat quam perspiciatis fugit? Voluptas animi mollitia error, nemo ea dignissimos perspiciatis impedit iure id ab dolor corporis facere nostrum dolore molestiae numquam non, atque eaque voluptatem? Aut dolor quibusdam earum deserunt rerum maxime ad optio recusandae? Voluptas, libero quaerat.
+                `,
+                section2 : `
+                ID4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim aperiam? Optio temporibus dolorem eaque in aspernatur qui id, accusamus earum cumque eum? Libero, est. Repellat eaque vel, illo, alias molestias perferendis cumque hic voluptatibus voluptates sapiente ratione est sit accusantium aliquam mollitia repudiandae molestiae eligendi omnis. Maxime libero perspiciatis molestias minus quidem praesentium cumque dicta doloribus doloremque voluptas quam quibusdam, quas, iusto reiciendis aut cum dignissimos sint. Eveniet debitis ratione facilis, perferendis esse aperiam facere obcaecati, laboriosam vel culpa veritatis libero ullam ducimus voluptatum nesciunt maiores dolore consequatur voluptatem repellendus quam eaque assumenda numquam? Ipsa nisi similique pariatur eos."
+                `
+            },
+            {
+                id : 5,
+                heading : `ID 5`,
+                section1 : `ID5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quos, rem porro impedit unde repellendus repellat. Ex autem adipisci molestiae quisquam sunt cumque est commodi deserunt, iusto ratione animi eos illum aperiam eaque debitis obcaecati quidem facere harum illo tempora. Aspernatur rerum dolorum ipsum porro aliquam fugit beatae, atque et architecto perferendis. Ipsa quasi quos eligendi possimus fuga qui repellat quam perspiciatis fugit? Voluptas animi mollitia error, nemo ea dignissimos perspiciatis impedit iure id ab dolor corporis facere nostrum dolore molestiae numquam non, atque eaque voluptatem? Aut dolor quibusdam earum deserunt rerum maxime ad optio recusandae? Voluptas, libero quaerat.
+                `,
+                section2 : `
+                ID5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim aperiam? Optio temporibus dolorem eaque in aspernatur qui id, accusamus earum cumque eum? Libero, est. Repellat eaque vel, illo, alias molestias perferendis cumque hic voluptatibus voluptates sapiente ratione est sit accusantium aliquam mollitia repudiandae molestiae eligendi omnis. Maxime libero perspiciatis molestias minus quidem praesentium cumque dicta doloribus doloremque voluptas quam quibusdam, quas, iusto reiciendis aut cum dignissimos sint. Eveniet debitis ratione facilis, perferendis esse aperiam facere obcaecati, laboriosam vel culpa veritatis libero ullam ducimus voluptatum nesciunt maiores dolore consequatur voluptatem repellendus quam eaque assumenda numquam? Ipsa nisi similique pariatur eos."
+                `
+            },
+            {
+                id : 6,
+                heading : `ID 6`,
+                section1 : `ID6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quos, rem porro impedit unde repellendus repellat. Ex autem adipisci molestiae quisquam sunt cumque est commodi deserunt, iusto ratione animi eos illum aperiam eaque debitis obcaecati quidem facere harum illo tempora. Aspernatur rerum dolorum ipsum porro aliquam fugit beatae, atque et architecto perferendis. Ipsa quasi quos eligendi possimus fuga qui repellat quam perspiciatis fugit? Voluptas animi mollitia error, nemo ea dignissimos perspiciatis impedit iure id ab dolor corporis facere nostrum dolore molestiae numquam non, atque eaque voluptatem? Aut dolor quibusdam earum deserunt rerum maxime ad optio recusandae? Voluptas, libero quaerat.
+                `,
+                section2 : `
+                ID6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim aperiam? Optio temporibus dolorem eaque in aspernatur qui id, accusamus earum cumque eum? Libero, est. Repellat eaque vel, illo, alias molestias perferendis cumque hic voluptatibus voluptates sapiente ratione est sit accusantium aliquam mollitia repudiandae molestiae eligendi omnis. Maxime libero perspiciatis molestias minus quidem praesentium cumque dicta doloribus doloremque voluptas quam quibusdam, quas, iusto reiciendis aut cum dignissimos sint. Eveniet debitis ratione facilis, perferendis esse aperiam facere obcaecati, laboriosam vel culpa veritatis libero ullam ducimus voluptatum nesciunt maiores dolore consequatur voluptatem repellendus quam eaque assumenda numquam? Ipsa nisi similique pariatur eos."
+                `
+            },
+            {
+                id : 7,
+                heading : `Verdict reached on Gonzalez V. Jade Dragon Casino!`,
+                section1 : `
+                After days of delibiration, the state court has finally reached a verdict on the tulmultuous case of Gonzalez V. Jade Dragon Casino. Samuel Gonzalez is a middle-age man living in the Clark county in Wisconsin. He has lived an average life with his family, but recently all was thrown into disarray when he visited the recently-opened Jade Dragon Casino. The casino's owner is Rodger White, an upstarting businessman who moved to Wisconsin from Illinois. Rodger's goals for the casino have been "to bring an exciting past time to an otherwise mundane area", as he puts it. Despite this, the casino came under scrutiny after Gonzalez visited the casino on March 17th, 2023, and walked out with claims that the casino is "undeniably and blatantly rigged." The casino has denied these claims, and has even countersued Gonzalez under claims that he was the one attempting to commit fraud, and is not only attempting to fine him $592,000 for the damages, but is also seeking jail time.
+                `,
+                section2 : `The case was escalated to the state court, who held a hearing on Monday. The evidence used by both parties has not entirely been made public, but we at CipherCentral were able to get a hold on a few key pieces of evidence used on both sides. Gonzalez claims that when playing at the roulette table, the staff told him that the roulette table was broken, and they needed to set it up properly before the round begun. Gonzalez then observed a reflection on certain parts of the wheel as it spun: specifically, over the color he had bet against. Jade Dragon Casino in turn claims that a staff member alerted them that Gonzalez had switched out the ball with a loaded variety before making the spin, in an attempt to rig it in his favor. While we do not have all the evidence at the moment, we have the verdict: The Court has decided that Jade Dragon Casino is guilty of fraud, and is fining them $1,000,371 to pay out to Gonzalez, along with more undisclosed fines for other customers. They are also authorizing a full investigation of the premises by authorities.
+                `
+            },
+            {
+                id : 8,
+                heading : `ID 8`,
+                section1 : `ID8 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sapiente quos, rem porro impedit unde repellendus repellat. Ex autem adipisci molestiae quisquam sunt cumque est commodi deserunt, iusto ratione animi eos illum aperiam eaque debitis obcaecati quidem facere harum illo tempora. Aspernatur rerum dolorum ipsum porro aliquam fugit beatae, atque et architecto perferendis. Ipsa quasi quos eligendi possimus fuga qui repellat quam perspiciatis fugit? Voluptas animi mollitia error, nemo ea dignissimos perspiciatis impedit iure id ab dolor corporis facere nostrum dolore molestiae numquam non, atque eaque voluptatem? Aut dolor quibusdam earum deserunt rerum maxime ad optio recusandae? Voluptas, libero quaerat.
+                `,
+                section2 : `
+                ID8 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim aperiam? Optio temporibus dolorem eaque in aspernatur qui id, accusamus earum cumque eum? Libero, est. Repellat eaque vel, illo, alias molestias perferendis cumque hic voluptatibus voluptates sapiente ratione est sit accusantium aliquam mollitia repudiandae molestiae eligendi omnis. Maxime libero perspiciatis molestias minus quidem praesentium cumque dicta doloribus doloremque voluptas quam quibusdam, quas, iusto reiciendis aut cum dignissimos sint. Eveniet debitis ratione facilis, perferendis esse aperiam facere obcaecati, laboriosam vel culpa veritatis libero ullam ducimus voluptatum nesciunt maiores dolore consequatur voluptatem repellendus quam eaque assumenda numquam? Ipsa nisi similique pariatur eos."
+                `
+            }
+        ]
+        let article1Number = 0
+        let article2Number = 0
+        let article1Heading = document.getElementById('article1Heading')
+        let article1Section1 = document.getElementById('article1Section1')
+        let article1Section2 = document.getElementById('article1Section2')
+        let article2Heading = document.getElementById('article2Heading')
+        let article2Section1 = document.getElementById('article2Section1')
+        let article2Section2 = document.getElementById('article2Section2')
+        document.addEventListener('DOMContentLoaded', ()=>{
+            article1Number = Math.floor(Math.random() * 8) + 1
+            console.log(article1Number)
+            article2Number = Math.floor(Math.random() * 8) + 1
+            console.log(article2Number)
+            while(article1Number === article2Number){
+                console.log("Rerolling Number 2")
+                article2Number = Math.floor(Math.random() * 8) + 1
+                console.log("New Number:", article2Number)
+            }
+            articles.forEach((item)=>{
+                if(item.id === article1Number){
+                    article1Heading.innerHTML += item.heading
+                    article1Section1.innerHTML += item.section1
+                    article1Section2.innerHTML += item.section2
+                }
+                if(item.id === article2Number){
+                    article2Heading.innerHTML += item.heading
+                    article2Section1.innerHTML += item.section1
+                    article2Section2.innerHTML += item.section2
+                }
+            })
+        })
+    </script>
+</body>
+</html>

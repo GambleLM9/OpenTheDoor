@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is closed.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        .quizholder{
+            justify-content: space-around;
+        }
+        .help p, .help h2, .help input, .help a, .help button{
+            margin: 10px;
+        }
+        a{
+            background-color: rgb(255, 218, 162);
+            width: fit-content;
+            margin: 0 auto;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            border-radius: 25px;
+        }
+        button{
+            padding: 15px 25px;
+            margin-top: 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 25px;
+            background-color: rgb(255, 218, 162);
+            cursor: pointer;
+        }
+        #response{
+            color: red;
+        }
+        input{
+            background-color: rgb(255, 218, 162);
+            border: 2px solid rgb(247, 197, 124);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quizholder">
+            <div class="help">
+                <h2>Help</h2>
+                <p>You have entered a unique error code. To help you, we must confirm that you are who you say you are.</p>
+                <p>Please enter the 7-digit code you registered as a security code.</p>
+                <input type="text" id="helpcodeInput">
+                <br>
+                <p id="response"></p>
+                <br>
+                <button id="submitButton" onclick="submit()">Submit</button>
+                <br>
+                <br>
+                <a href="questionnare.html">Go Back</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 3rd Hint: On load, change hint
+        const helpInput = document.getElementById('helpcodeInput')
+        const response = document.getElementById('response')
+        const submitBtn = document.getElementById('submitButton')
+        function submit(){
+            if(helpInput.value === "1592371"){
+                window.location.href = "/OpenTheDoor/quizanswer.html"
+            }
+            else{
+                response.innerHTML = 'Invalid Code.'
+                setTimeout(()=>{
+                    response.innerHTML = ''
+                }, 3000)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is closed.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        
+        .quizintro{
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        .quizintro h1{
+            padding: 20px;
+        }
+        .quizintro p{
+            padding: 10px;
+        }
+        .beginbutton{
+            padding: 20px 40px;
+            margin-top: 20px;
+            font-size: .75em;
+            border: none;
+            border-radius: 25px;
+            background-color: rgb(255, 218, 162);
+            cursor: pointer;
+        }
+        .door{
+            background-color: rgb(255, 218, 162);
+            width: fit-content;
+            margin: 0 auto;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            border-radius: 25px;
+        }
+        .quizhelp{
+            padding: 10px;
+        }
+        #errorInput{
+            background-color: rgb(255, 218, 162);
+            border: 2px solid rgb(247, 197, 124);
+        }
+        .qlink{
+            color: green;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quizholder">
+            <div class="quizintro">
+                <h1>🎉Daily Excitement Quiz!🎉</h1>
+                <p>Take the Daily Excitement Quiz to measure just how exciting your day was! All questions are handpicked carefully and intentionally to provide you the most accurate and fun results 🙂</p>
+                <p>Press the button below to get started!</p>
+                <button class="beginbutton" onclick="beginQuiz()">Begin!</button>
+            </div>
+            <a class="door" href="/OpenTheDoor/home.html">the door</a>
+            <div class="quizhelp">
+                <p>Having trouble? Enter your error code below!</p>
+                <input type="text" id="errorInput">
+                <div id="errorText"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const errorInput = document.getElementById('errorInput')
+        const errorText = document.getElementById('errorText')
+        function beginQuiz(){
+            window.location.href = '/OpenTheDoor/quizpart1.html'
+        }
+        errorInput.addEventListener('keyup',()=>{
+            var input = errorInput.value.toUpperCase()
+            if(input === "GVJDC"){
+                errorText.style.color = 'green'
+                errorText.innerHTML = `Valid Code! <a class="qlink" href="quizhelp.html">Please click here!</a> `
+            }
+            else{
+                errorText.style.color = 'red'
+                errorText.innerHTML = `Invalid Code! Enter code in XXXXX notation.`
+            }
+        })
+    </script>
+</body>
+</html>

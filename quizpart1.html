@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is closed.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <script src="quiz.js" defer></script>
+    <style>
+        .quizholder{
+            height: fit-content;
+        }
+        h2{
+            margin: 20px;
+            border-bottom: 4px solid rgb(247, 197, 124);
+            padding: 20px;
+        }
+        .question{
+            padding: 20px;
+            margin: 0 auto;
+            background-color: rgb(255, 218, 162);
+            width: 70%;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            border: 3px solid rgb(247, 197, 124);
+        }
+        select{
+            margin: 10px;
+            padding: 10px;
+            background-color: blanchedalmond;
+            border: 2px solid rgb(247, 197, 124);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        input{
+            background-color: blanchedalmond;
+            border: 2px solid rgb(247, 197, 124);
+            margin: 10px;
+            cursor: pointer;
+        }
+        .q10{
+            margin-bottom: 100px;
+        }
+        button{
+            width: fit-content;
+            padding: 10px 20px;
+            margin: 0 auto;
+            margin-bottom: 100px;
+            background-color: rgb(255, 218, 162);
+            border: 2px solid rgb(247, 197, 124);
+            font-size: 1.25em;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quizholder">
+            <h2>Daily Excitement Quiz</h2>
+            <div class="question q1">
+                <h3>Question #1: How tired are you right now?</h3>
+                <select id="question1">
+                    <option value="placeholder">Select Below</option>
+                    <option value="veryTired">Very Tired💤</option>
+                    <option value="sleepy">Sleepy🥱</option>
+                    <option value="awake">Awake🙂</option>
+                    <option value="energetic">Energetic⚡</option>
+                </select>
+                <p id="response1"></p>
+            </div>
+            <div class="question q2">
+                <h3>Question #2: What did you do today?</h3>
+                <select id="question2">
+                    <option value="placeholder">Select Below</option>
+                    <option value="hiking">Went hiking🗻</option>
+                    <option value="surfing">Went Surfing🏄‍♀️</option>
+                    <option value="sport">Played a sport🏈</option>
+                    <option value="games">Played video games🎮</option>
+                    <option value="other">Other🤔</option>
+                    <option value="none">Nothing😶</option>
+                </select>
+                <p id="response2"></p>
+            </div>
+            <div class="question q3">
+                <h3>Question #3: How do you feel right now?</h3>
+                <select id="question3">
+                    <option value="placeholder">Select Below</option>
+                    <option value="happy">Happy!😀</option>
+                    <option value="normal">Normal.😐</option>
+                    <option value="sad">Sad..🙁</option>
+                    <option value="angry">Angry!!!😡</option>
+                    <option value="other">Other🤔</option>
+                </select>
+                <p id="response3"></p>
+            </div>
+            <div class="question q4">
+                <h3>Question #4: What time do you plan on falling asleep?</h3>
+                <select id="question4">
+                    <option value="placeholder">Select Below</option>
+                    <option value="superlate">Super Late 🕛 (12:00am+)</option>
+                    <option value="late">Late 🕙 (10:00pm - 12:00am)</option>
+                    <option value="normal">Normal 🕗 (8:00pm - 10:00pm)</option>
+                    <option value="early">Early 🕕 (6:00pm - 8:00pm)</option>
+                </select>
+                <p id="response4"></p>
+            </div>
+            <div class="question q5">
+                <h3>Question #5: Are you satisfied with today?</h3>
+                <select id="question5">
+                    <option value="placeholder">Select Below</option>
+                    <option value="yes">Yes! ✅</option>
+                    <option value="no">No.. ❌</option>
+                </select>
+                <p id="response5"></p>
+            </div>
+            <div class="question q6">
+                <h3>How do you feel about gambling?</h3>
+                <select id="question6">
+                    <option value="placeholder">Select Below</option>
+                    <option value="addicted">It's super fun!🎰</option>
+                    <option value="normal">It's okay time to time.💳</option>
+                    <option value="uneasy">I'm a bit unsure..😓</option>
+                    <option value="dislike">I hate it!🚫</option>
+                </select>
+                <p id="response6"></p>
+            </div>
+            <div class="question q7">
+                <h3>Question #7: What do you estimate your average heart rate today to be?</h3>
+                <select id="question7">
+                    <option value="placeholder">Select Below</option>
+                    <option value="40">40📝</option>
+                    <option value="60">60📝</option>
+                    <option value="80">80📝</option>
+                    <option value="100">100📝</option>
+                    <option value="120">120📝</option>
+                    <option value="what">What???</option>
+                </select>
+                <p id="response7"></p>
+            </div>
+            <div class="question q8">
+                <h3>Question #8: What did you have for dessert?</h3>
+                <select id="question8">
+                    <option value="placeholder">Select Below</option>
+                    <option value="cake">Cake🍰</option>
+                    <option value="pie">Pie🥧</option>
+                    <option value="brownies">Brownies🍫</option>
+                    <option value="icecream">Ice Cream🍨</option>
+                    <option value="other">Other💭</option>
+                    <option value="none">Nothing🍽</option>
+                </select>
+                <p id="response8"></p>
+            </div>
+            <div class="question q9">
+                <h3>Question #9: What's your favorite color? Pick below:</h3>
+                <input type="color" id="question9">
+                <p id="response9"></p>
+            </div>
+            <div class="question q10">
+                <h3>Question #10: Do you think today has been exciting?</h3>
+                <select id="question10">
+                    <option value="placeholder">Select Below</option>
+                    <option value="yes">Yes! ✅</option>
+                    <option value="no">No.. ❌</option>
+                </select>
+                <p id="response10"></p>
+            </div>
+            <button class="nextbutton" onclick="nextPage()">Next➡</button>
+        </div>
+    </div>
+    <script>
+        function nextPage(){
+            window.location.href = '/OpenTheDoor/quizpart2.html'
+        }
+    </script>
+</body>
+</html>

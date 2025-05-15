@@ -1,0 +1,18 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom left, rgb(30, 202, 202), rgb(42, 149, 149));
+}
+.quizholder{
+    margin: 0 auto;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+}

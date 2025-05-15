@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is closed.</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }   
+        .header{
+            width: 100%;
+            background-color: rgb(0, 174, 0);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1{
+            font-size: 2.5em;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            margin-right: 5px;
+            background-color: rgb(0, 234, 0);
+            border: 2px solid green;
+            border-radius: 25px;
+        }
+        .newsarticle{
+            display: flex;
+            flex-direction: column;
+        }
+        .archivecode{
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 20%;
+            background-color: rgb(228, 228, 228);
+            width: fit-content;
+            padding: 20px;
+            border-radius: 25px;
+        }
+        .archivecode > *{
+            margin: 5px;
+        }
+        input{
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="newsarticle">
+            <header class="header">
+                <h1>CipherCentral News</h1>
+                <div>
+                    <p>"We always check at least twice."</p>
+                    <p>- Our founder, [REDACTED]</p>
+                </div>
+                <nav>
+                    <a href="/OpenTheDoor/error1.html">Home</a>
+                    <a href="/OpenTheDoor/article.html">Back</a>
+                    <a href="/OpenTheDoor/error2.html">Find Us</a>
+                    <a href="/OpenTheDoor/error3.html">Subscription</a>
+                    <a href="/OpenTheDoor/home.html">the door</a>
+                </nav>
+            </header>
+            <div class="newscontainer">
+                <div id="div1" class="archivecode">
+                    <h2>Please enter the password for the archives:</h2>
+                    <input type="text" id="passInput">
+                    <button class="subBtn" onclick="passSubmit()">Submit</button>
+                    <p id="passResponse"></p>
+                </div>
+                <div id="div2" class="archivecode hide">
+                    <p>The Archives have been wiped clean of all but the key's location.</p>
+                    <p>We do not advise this, but we will not stop you.</p>
+                    <p>Go to the box, and search for AN/913. Use that key's keycode, along with what we have provided, to make the complete key.</p>
+                    <p>This is your last advisory against opening the door.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 6th Hint: On password entry, change hint
+        const passInput = document.getElementById('passInput')
+        const passResponse = document.getElementById('passResponse')
+        const passwordCheck = document.getElementById('div1')
+        const archive = document.getElementById('div2')
+        function passSubmit(){
+            if(passInput.value === "Day4720!"){
+                passwordCheck.classList.add('hide') 
+                archive.classList.remove('hide')
+            }
+            else{
+                passResponse.innerHTML = 'Invalid Password.'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is Closed</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <script src="puzzle.js" defer></script>
+    <style>
+        .menuBox{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .door{
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menuBox">
+            <img src="thedoor.png" alt="the door." class="door" id="theDoor">
+            <a href="/OpenTheDoor/keybox.html">
+                <img src="arrow1.png" alt="arrow to the box of keys" class="arrow" id="arrow1">
+            </a>
+            <a href="/OpenTheDoor/article.html">
+                <img src="arrow2.png" alt="arrow to the articles" class="arrow" id="arrow2">
+            </a>
+            <a href="/OpenTheDoor/questionnare.html">
+                <img src="arrow3.png" alt="arrow to the questionnare" class="arrow" id="arrow3">
+            </a>
+        </div>
+    </div>
+    <script>
+        // 1st Event: Initial hint
+        document.addEventListener('DOMContentLoaded',()=>{
+            const hasVisited = localStorage.getItem('hasVisited')
+            if(!hasVisited){
+                alert('Hello? Is someone there?')
+                alert('Oh! I can see you!')
+                alert('Hi! My name is Karl.')
+                alert("I've been locked inside this room for a long time.")
+                alert("I want to get out, but the door is locked, and I can't get it open.")
+                alert("I can still look outside, though!")
+                var yesOrNo = confirm("Do you think you can help me?")
+                if(yesOrNo){
+                    alert("Oh, that's great!")
+                    alert("I think there's a key that opens this door. I don't know where it is, though.")
+                    alert("But I can help you look! If you need help, just press * to call me, and I'll speak my mind!")
+                    alert("Anyway, can you look around for the key? Maybe those red arrows can take you somewhere?")
+                    localStorage.setItem('hasVisited', true)
+                    localStorage.setItem('hintCount', "Step1")
+                }
+                else{
+                    window.close()
+                }
+            }
+        })
+        var keycounter = 0
+        document.addEventListener('keyup', (event)=>{
+            const newEvent = event.key.toUpperCase()
+            if(newEvent === 'Q' && keycounter === 0){
+                keycounter++
+            }
+            else if(newEvent === 'B' && keycounter === 1){
+                keycounter++
+            }
+            else if(newEvent === 'N' && keycounter === 2){
+                keycounter++
+            }
+            else if(newEvent === 'O' && keycounter === 3){
+                keycounter++
+            }
+            else if(newEvent === '2' && keycounter === 4){
+                keycounter++
+            }
+            else if(newEvent === 'I' && keycounter === 5){
+                keycounter++
+            }
+            else if(newEvent === 'A' && keycounter === 6){
+                keycounter++
+            }
+            else if(newEvent === 'N' && keycounter === 7){
+                keycounter++
+            }
+            else if(newEvent === '/' && keycounter === 8){
+                keycounter++
+            }
+            else if(newEvent === '9' && keycounter === 9){
+                keycounter++
+            }
+            else if(newEvent === '1' && keycounter === 10){
+                keycounter++
+            }
+            else if(newEvent === '3' && keycounter === 11){
+                window.location.href = "/OpenTheDoor/youdidit.html"
+            }
+            else if(newEvent === 'SHIFT'){
+                console.log('boop?')
+            }
+            else{
+                keycounter = 0
+            }
+        })
+    </script>
+</body>
+</html>

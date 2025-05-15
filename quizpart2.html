@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Door is closed.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <style>
+        .quizholder{
+            justify-content: space-around;
+        }
+        .thequestion{
+            padding: 20px;
+            margin: 0 auto;
+            background-color: rgb(255, 218, 162);
+            width: 70%;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            border: 3px solid rgb(247, 197, 124); 
+        }
+        select{
+            margin: 10px;
+            padding: 10px;
+            background-color: blanchedalmond;
+            border: 2px solid rgb(247, 197, 124);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quizholder">
+            <div class="thequestion">
+                <h3>Why do you want to open the door?</h3>
+                <select id="thequestion">
+                    <option value="placeholder">Select Below</option>
+                    <option value="told">I was told to</option>
+                    <option value="curious">Im curious</option>
+                    <option value="bored">Im bored</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 2nd Hint: On question reject, change hint
+        const thequestion = document.getElementById('thequestion')
+        var codecounter = 0
+        thequestion.addEventListener('change', ()=>{
+            if(thequestion.value === "karl"){
+                window.location.href = '/OpenTheDoor/theanswer.html'
+            }
+            else if(thequestion.value === "placeholder"){
+                console.log('stay')
+            }
+            else{
+                window.location.href = '/OpenTheDoor/error4.html'
+            }
+        })
+        document.addEventListener('keydown',(event)=>{
+            if(event.key === "3" && codecounter === 0){
+                codecounter++
+            }
+            else if(event.key === "6" && codecounter === 1){
+                codecounter++
+            }
+            else if(event.key === "1" && codecounter === 2){
+                codecounter++
+            }
+            else if(event.key === "6" && codecounter === 3){
+                codecounter++
+            }
+            else if(event.key === "1" && codecounter === 4){
+                codecounter++
+            }
+            else if(event.key === "7" && codecounter === 5){
+                codecounter++
+            }
+            else if(event.key === "9" && codecounter === 6){
+                codecounter++
+            }
+            else if(event.key === "8" && codecounter === 7){
+                codecounter++
+            }
+            else if(event.key === "8" && codecounter === 8){
+                codecounter++
+            }
+            else if(event.key === "0" && codecounter === 9){
+                codecounter++
+            }
+            else if(event.key === "3" && codecounter === 10){
+                codecounter++
+            }
+            else if(event.key === "4" && codecounter === 11){
+                thequestion.innerHTML += `
+                <option value="karl">I want to free Karl</option>
+                `
+            }
+            else{
+                codecounter = 0
+            }
+            // 3616|1798|8034
+        })
+    </script>
+</body>
+</html>
