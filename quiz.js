@@ -168,6 +168,9 @@ question8.addEventListener('change',()=>{
     if(question8.value === "other"){
         response8.innerHTML = "It better not be grass. You know people actually eat that? It's a delicacy in some places. They take grass, slap it on a plate and call it something fancy, but it really is just grass if you ask me."
     }
+    if(question8.value === "none"){
+        response8.innerHTML = "Sounds like you could go for a knuckle sandwich. Was that too mean? I don't have to fill out more paperwork, right?"
+    }
 })
 question9.addEventListener('change',()=>{
     if(question9.value === "#000000"){

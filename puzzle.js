@@ -14,7 +14,7 @@ document.addEventListener('keyup', (event)=>{
         }
         if(whatHint == "Step4"){
             alert("FUSH method? I've never heard of that in my life. Maybe it's an acronym for something? Take a look around the place, and see if there's anything that fits that!")
-            alert("It said to type whatever you found on your keyboard at the question, so remember that too.")
+            alert("Maybe it'll get you some kind of code? If it does, make sure to type it on your keyboard once you get to that question?")
             alert("Also, does the title for the tabs ever change? It's always something about the door being locked!")
         }
         if(whatHint == "Step5"){

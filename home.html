@@ -8,28 +8,72 @@
     <script src="index.js" defer></script>
     <script src="puzzle.js" defer></script>
     <style>
+        header{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            padding: 20px;
+        }
         .menuBox{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
         }
         .door{
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            margin: 0 auto;
+        }
+        .arrowBox{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
             align-items: center;
+        }
+        .arrow{
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+        .arrow3{
+            transform: rotate(360deg);
+        }
+        .arrow2{
+            position: absolute;
+            top: 75%;
+            transform: rotate(90deg);
+        }
+        .arrow1{
+            transform: rotate(180deg);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="menuBox">
-            <img src="thedoor.png" alt="the door." class="door" id="theDoor">
-            <a href="keybox.html">
-                <img src="arrow1.png" alt="arrow to the box of keys" class="arrow" id="arrow1">
-            </a>
-            <a href="article.html">
-                <img src="arrow2.png" alt="arrow to the articles" class="arrow" id="arrow2">
-            </a>
-            <a href="questionnare.html">
-                <img src="arrow3.png" alt="arrow to the questionnare" class="arrow" id="arrow3">
-            </a>
+    <header>
+        <h2>Open The Door</h2>
+    </header>
+    <div class="menuBox">
+        <div class="door">
+            <img src="thedoor.png" alt="the door." id="theDoor">
+        </div>
+    </div>
+    <div class="arrowBox">
+        <div class="arrowdiv arrow1">
+            <img src="arrow1.png" alt="arrow to the box of keys" class="arrow" id="arrow1">
+        </div>
+        <div class="arrowdiv arrow2">
+            <img src="arrow2.png" alt="arrow to the articles" class="arrow" id="arrow2">
+        </div>
+        <div class="arrowdiv arrow3">
+            <img src="arrow3.png" alt="arrow to the questionnare" class="arrow" id="arrow3">
         </div>
     </div>
     <script>
@@ -54,7 +98,12 @@
                     localStorage.setItem('hintCount', "Step1")
                 }
                 else{
-                    window.close()
+                    alert("That's a weird way to say yes!")
+                    alert("I think there's a key that opens this door. I don't know where it is, though.")
+                    alert("But I can help you look! If you need help, just press * to call me, and I'll speak my mind!")
+                    alert("Anyway, can you look around for the key? Maybe those red arrows can take you somewhere?")
+                    localStorage.setItem('hasVisited', true)
+                    localStorage.setItem('hintCount', "Step1")
                 }
 
             }
