@@ -36,6 +36,7 @@
         // 1st Event: Initial hint
         document.addEventListener('DOMContentLoaded',()=>{
             const hasVisited = localStorage.getItem('hasVisited')
+            const firstTime = localStorage.getItem('hintCount')
             if(!hasVisited){
                 alert('Hello? Is someone there?')
                 alert('Oh! I can see you!')
@@ -55,11 +56,16 @@
                 else{
                     window.close()
                 }
+
+            }
+            if(firstTime == "Step7"){
+                alert('Cmon! Type the keycode on your keyboard!')
             }
         })
         var keycounter = 0
         document.addEventListener('keyup', (event)=>{
             const newEvent = event.key.toUpperCase()
+            const firstTime = localStorage.getItem('hintCount')
             if(newEvent === 'Q' && keycounter === 0){
                 keycounter++
             }
@@ -76,6 +82,11 @@
                 keycounter++
             }
             else if(newEvent === 'I' && keycounter === 5){
+                if(firstTime == "Step7"){
+                    alert("What?! Why doesn't it fit?!")
+                    alert("Oh! Put the two codes together!")
+                    localStorage.setItem("hintCount","Step8")
+                }
                 keycounter++
             }
             else if(newEvent === 'A' && keycounter === 6){

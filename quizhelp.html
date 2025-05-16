@@ -6,6 +6,7 @@
     <title>The Door is closed.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quiz.css">
+    <script src="puzzle.js"></script>
     <style>
         .quizholder{
             justify-content: space-around;
@@ -60,6 +61,12 @@
     </div>
     <script>
         // 3rd Hint: On load, change hint
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const firstTime = localStorage.getItem('hintCount')
+            if(firstTime == "Step2"){
+                localStorage.setItem('hintCount', "Step3")
+            }
+        })
         const helpInput = document.getElementById('helpcodeInput')
         const response = document.getElementById('response')
         const submitBtn = document.getElementById('submitButton')

@@ -34,5 +34,11 @@
         <a href="/home.html" target="_blank">Click me to enter the website.</a>
         <p>&copy; 2025 Gamble. All rights reserved.</p>
     </div>
+    <script>
+        const firstTime = localStorage.getItem('hintCount')
+        if(firstTime == "Step9"){
+            window.location.href = "/youdidit.html"
+        }
+    </script>
 </body>
 </html>

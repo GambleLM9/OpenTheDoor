@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Door is closed.</title>
     <link rel="stylesheet" href="style.css">
+    <script src="puzzle.js"></script>
     <style>
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -101,6 +102,10 @@
         const archive = document.getElementById('div2')
         function passSubmit(){
             if(passInput.value === "Day4720!"){
+                const firstTime = localStorage.getItem('hintCount')
+                    if(firstTime == "Step5"){
+                        localStorage.setItem('hintCount', "Step6")
+                    }
                 passwordCheck.classList.add('hide') 
                 archive.classList.remove('hide')
             }

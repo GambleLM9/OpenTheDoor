@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Door is closed.</title>
     <link rel="stylesheet" href="style.css">
+    <script src="puzzle.js"></script>
     <style>
         body{
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
@@ -189,6 +190,10 @@
                 const keyAge = key.getAttribute('key-age')
                 const keyCode = key.getAttribute('key-code')
                 if(search === "an/913" && key.id == "7"){
+                    const firstTime = localStorage.getItem('hintCount')
+                        if(firstTime == "Step6"){
+                            localStorage.setItem('hintCount', "Step7")
+                        }
                     key.classList.remove('hide')
                 }
                 else if((keyDesc.includes(search))||(keyAge.includes(search))){

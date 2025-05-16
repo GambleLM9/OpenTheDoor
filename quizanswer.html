@@ -6,6 +6,7 @@
     <title>The Door is closed.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quiz.css">
+    <script src="puzzle.js"></script>
     <style>
         .quizholder{
             justify-content: space-around;
@@ -35,5 +36,13 @@
         </div>
     </div>
     <!-- 4th Hint: On load, change hint -->
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const firstTime = localStorage.getItem('hintCount')
+            if(firstTime == "Step3"){
+                localStorage.setItem('hintCount', "Step4")
+            }
+        })
+    </script>
 </body>
 </html>

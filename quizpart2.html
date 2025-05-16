@@ -6,6 +6,7 @@
     <title>The Door is closed.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="quiz.css">
+    <script src="puzzle.js"></script>
     <style>
         .quizholder{
             justify-content: space-around;
@@ -55,6 +56,11 @@
                 console.log('stay')
             }
             else{
+                const firstTime = localStorage.getItem('hintCount')
+                if(firstTime == "Step1"){
+                    console.log('hint2')
+                    localStorage.setItem('hintCount', "Step2")
+                }
                 window.location.href = '/error4.html'
             }
         })

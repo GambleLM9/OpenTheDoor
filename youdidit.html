@@ -22,5 +22,15 @@
             <h2>YOU HAVE OPENED A DOOR YOU CANNOT CLOSE</h2>
         </div>
     </div>
+    <script>
+        const firstTime = localStorage.getItem('hintCount')
+        if(firstTime == "Step8"){
+            alert("You did it. You freed me.")
+            alert("Thank you for all you have done for me.")
+            alert("I hope you don't regret what you've done.")
+            alert("I'll see you soon, new friend.")
+            localStorage.setItem('hintCount', "Step9")
+        }
+    </script>
 </body>
 </html>
