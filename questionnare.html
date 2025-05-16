@@ -59,7 +59,7 @@
                 <p>Press the button below to get started!</p>
                 <button class="beginbutton" onclick="beginQuiz()">Begin!</button>
             </div>
-            <a class="door" href="/home.html">the door</a>
+            <a class="door" href="home.html">the door</a>
             <div class="quizhelp">
                 <p>Having trouble? Enter your error code below!</p>
                 <input type="text" id="errorInput">
@@ -71,7 +71,7 @@
         const errorInput = document.getElementById('errorInput')
         const errorText = document.getElementById('errorText')
         function beginQuiz(){
-            window.location.href = '/quizpart1.html'
+            window.location.href = 'quizpart1.html'
         }
         errorInput.addEventListener('keyup',()=>{
             var input = errorInput.value.toUpperCase()
