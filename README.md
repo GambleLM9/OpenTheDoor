@@ -16,6 +16,8 @@ Languages used:
 6. [JavaScript Code Examples](#javascript-code-examples)
     - [puzzle.js](#puzzlejs)
     - [quiz.js](#quizjs)
+    - [index.js](#indexjs)
+    - [article.html JavaScript Code](#articlehtml-javascript-code)
 ## HTML
 This project is comprised of multiple .html files in order to contain the various aspects of the website. Each file is comprised of HTML code to provide a basic structure to each page. 
 
@@ -740,4 +742,120 @@ The above code:
 - adds event listeners to the questions by using the `addEventListener()` method on the variables containing the DOM for the html question elements, set to listen for the `change` event, which will activate if the value for the element is changed
 - records the value of the targeted question with the `.value` specifier
 - checks the element's value against a series of `if` statements, and records which value the question matches with
-- updates the `.innerHTML` of the variables linked to the p elements in the html in order to give a dynamic response to the user's answer to the question, offering unique responses if certain combinations of answers are selected, made possible using the `||` logical operator
+- updates the `.innerHTML` of the variables linked to the p elements in the html in order to give a dynamic response to the user's answer to the question, offering unique responses if certain combinations of answers are selected, made possible using the `||` logical operator.
+
+### index.js
+``` javascript
+let articleArrow = document.getElementById("arrow2")
+let questionArrow = document.getElementById("arrow3")
+let boxArrow = document.getElementById("arrow1")
+articleArrow.addEventListener('click',()=>{
+    window.location.href = 'article.html'
+})
+questionArrow.addEventListener('click',()=>{
+    window.location.href = 'questionnare.html'
+})
+boxArrow.addEventListener('click',()=>{
+    window.location.href = 'keybox.html'
+})
+```
+
+The above code:
+- assigns variables named `articleArrow`, `questionArrow`, and `boxArrow` to the DOM of the `img` elements in the html code
+- adds event listeners using the `addEventListener()` method on the variables to listen for when the elements are clicked
+- changes the `location` property of the `window` object when the event is detected to take the user to the respective parts of the webpage, by setting the `href` to `article.html`, `questionnare.html`, and `keybox.html`
+
+### article.html JavaScript Code
+``` javascript
+let articles = [
+            {
+                id : 1,
+                heading : `Kerguelen Islands Declare Independence!`,
+                section1 : `The Kerguelen Islands, previously recognized as an overseas territory of France since 1893, have officially declared their independence to form their own country. Located approximately 3,300 km south of Madagascar, the island is one of the most isolated pieces of land on Earth, with only 100 scientists calling the place home. However, after being enamored by a “Purple Sky Shark,” a sudden and unexpected poll was held by the research team, who voted 98% in favor of independence. France has reluctantly recognized this claim. “Do you see how far away that place is?” A high-ranking French official said. “Anyone with enough grit to set up camp of Kurguelen long-term is not anyone I want fight with. As far as I’m concerned, that place is theirs now. We’re the least of their problems anyway.” 
+                `,
+                section2 : `
+                It is currently unclear how Kerguelen plans to sustain its population without French support. The island is infertile, possesses no airport, and requires a 7-day boat journey through some of the roughest waters in the world to reach, making trade difficult. “The Purple Sky Shark will take care of us.”  An islander said when asked about their international trade plans. “It will be a pizza party every night, full of cabbages, cats, and a giant slide made of ice.  Be sure to stop by if you can.” When called by loved ones, the islanders answered their phones, but gave no verbal reply.  Strangely, a sound resembling the call of the extinct Kauai ‘O’o bird was reported on one of the phone lines.
+                `
+            },
+            {
+                id : 2,
+                heading : `Vernal Isle Salt Factory shuts down after inspection!`,
+                section1 : `Several stores are contemplating their supply of salt this morning with the news that hit the [county] County in [state] today: Vernal Isle Salt Factory, a production site relied on by many local businesses and stores, has been shut down and closed indefinitely. [owner] founded the company Vernal Isle in [year], and after facing some initial difficulties in money and supplies, they had eventually managed to build a proper salt factory and rise among the ranks, growing to a reliable supplier of salt for all stores in the area, even reaching out beyond it's home county and branching out steadily across the entire state, with their transportation methods evolving and even planning to open up more locations as well. This cemented Vernal Isle as a trustworthy and reliable company, but apparently that wasn't the case behind the scenes.
+                `,
+                section2 : `
+                The factory had apparently been long overdue a safety inspection, according to [inspector], a safety inspector for the Occupational Safety and Health Association (OSHA), who we reached out to personally to provide details. OSHA scheduled an inspection for [initial day], almost 2 years ago by now. However, around that time, an unprecedented storm had rolled in, creating severe flooding for several days. OSHA was unable to conduct the safety inspection, and had to reschedule it for a later time. Around a year later, the inspection had been scheduled for [month], but Vernal Isle had to postpone the inspection due to what was described at the time as "severe internal issues that had threatened the company itself." OSHA complied and rescheduled again, but another storm had rolled in then, causing severe damages in the local industrial areas and forcing OSHA to, yet again, reschedule the inspection. Finally, the inspection came around last week on [final day], and what they found wasn't pretty. A full report is to be made available on OSHA's website later today, but we're told that it has to do with "extremely unsafe and unsanitary conditions, only possible if they had rushed the building process."
+                `
+            },
+            {
+                id : 3,
+                heading : `Could a presumed wholesome owner actually be a criminal?`,
+                section1 : `Will… a well known person that owns a cabin retreat in the secluded island of Inikon off the gulf. Many other residents of the cabin have given Will a great reputation for being the nicest and most wholesome person they have met. With all these good points, you wouldn’t think such a person could do any bad… right? Though they are not confirmed just yet, there have been many allegations of a certain person who caused the massive forest fire in Inikon on May 5 which caused millions of dollars worth of damage to a nearby town. Fortunately no one was hurt during that fire but many have reported that they have seen a person with a similar scarf that Will owns leave just before the fire exploded in size.
+                `,
+                section2 : `
+                Another report was of Will allegedly telling someone without proper licensing to operate machinery for transporting certain things. It was for a big dinner planned and they needed some extra supplies delivered and though the person didn’t have the proper license, Will apparently insisted that he should drive the truck over anyways since there are not many people who drive the road anyways and shouldn’t worry about it. The delivery and dinner was a resounding success either way with no reported traffic incidents.Such reports were never confirmed to be completely true and when Will was asked about these allegations, Will responded that many of these claims are either not true or mentioned to be way out of context. We won’t know until we confirm these to be true and we shall see.
+                `
+            },
+            {
+                id : 4,
+                heading : `ONE MORE SPIN`,
+                section1 : `Just one more spin could save your life. Today in Tuefort, New Mexico, a neuroscientist (John Study) found a ground breaking connection of the length of lifespans between those who did and did not partake in heavy amounts of gambling in the later stages of their life. After pouring hundreds of hours into his local casino's obituary, Study noticed how the rates of the elderly passing skyrocketed after they had encountered a reason to step away from the machine.
+                `,
+                section2 : `
+                After learning about this discovery, we reached out to Study to learn more about his thesis, he stated "All of my studies are based entirely on nothing but personal belief and a strong will." He then returned to Omaha Oasis, the Casino and hotel. John later went on to post all his findings in his New York Times, best selling book "The Gambler's Guide to the Universe". After managing to sell over three million copies within the first week, the traffic rate of casinos, bars, and online betting sites soared to never before seen heights. Many people were now seeing the path of gambling as a way of salvation and immortality, quickly dropping all of their savings on the nearest poker table or slot machine.
+                `
+            },
+            {
+                id : 5,
+                heading : `Verdict reached on Gonzalez V. Jade Dragon Casino!`,
+                section1 : `
+                After days of delibiration, the state court has finally reached a verdict on the tulmultuous case of Gonzalez V. Jade Dragon Casino. Samuel Gonzalez is a middle-age man living in the Clark county in Wisconsin. He has lived an average life with his family, but recently all was thrown into disarray when he visited the recently-opened Jade Dragon Casino. The casino's owner is Rodger White, an upstarting businessman who moved to Wisconsin from Illinois. Rodger's goals for the casino have been "to bring an exciting past time to an otherwise mundane area", as he puts it. Despite this, the casino came under scrutiny after Gonzalez visited the casino on March 17th, 2023, and walked out with claims that the casino is "undeniably and blatantly rigged." The casino has denied these claims, and has even countersued Gonzalez under claims that he was the one attempting to commit fraud, and is not only attempting to fine him $592,000 for the damages, but is also seeking jail time.
+                `,
+                section2 : `The case was escalated to the state court, who held a hearing on Monday. The evidence used by both parties has not entirely been made public, but we at CipherCentral were able to get a hold on a few key pieces of evidence used on both sides. Gonzalez claims that when playing at the roulette table, the staff told him that the roulette table was broken, and they needed to set it up properly before the round begun. Gonzalez then observed a reflection on certain parts of the wheel as it spun: specifically, over the color he had bet against. Jade Dragon Casino in turn claims that a staff member alerted them that Gonzalez had switched out the ball with a loaded variety before making the spin, in an attempt to rig it in his favor. While we do not have all the evidence at the moment, we have the verdict: The Court has decided that Jade Dragon Casino is guilty of fraud, and is fining them $1,000,371 to pay out to Gonzalez, along with more undisclosed fines for other customers. They are also authorizing a full investigation of the premises by authorities.
+                `
+            }
+        ]
+        let article1Number = 0
+        let article2Number = 0
+        let article1Heading = document.getElementById('article1Heading')
+        let article1Section1 = document.getElementById('article1Section1')
+        let article1Section2 = document.getElementById('article1Section2')
+        let article2Heading = document.getElementById('article2Heading')
+        let article2Section1 = document.getElementById('article2Section1')
+        let article2Section2 = document.getElementById('article2Section2')
+        document.addEventListener('DOMContentLoaded', ()=>{
+            article1Number = Math.floor(Math.random() * 5) + 1
+            console.log(article1Number)
+            article2Number = Math.floor(Math.random() * 5) + 1
+            console.log(article2Number)
+            while(article1Number === article2Number){
+                console.log("Rerolling Number 2")
+                article2Number = Math.floor(Math.random() * 5) + 1
+                console.log("New Number:", article2Number)
+            }
+            articles.forEach((item)=>{
+                if(item.id === article1Number){
+                    article1Heading.innerHTML += item.heading
+                    article1Section1.innerHTML += item.section1
+                    article1Section2.innerHTML += item.section2
+                }
+                if(item.id === article2Number){
+                    article2Heading.innerHTML += item.heading
+                    article2Section1.innerHTML += item.section1
+                    article2Section2.innerHTML += item.section2
+                }
+            })
+        })
+```
+
+The above code:
+- creates an array called `articles` with multiple nested objects inside, each with the properties of `id`, `heading`, `section1`, and `section2`, with:
+    - `id` being the unique value assigned to the object
+    - `heading` being the article name given to the object
+    - `section1` being the first part of the article given to the object
+    - `section2` being the second part of the article given to the object
+- creates multiple variables:
+    - two variables named `article1Number` and `article2Number`, given inital values of `0`, in order to eventually contain the randomly generated numbers for each article
+    - two variables named `article1Heading` and `article2Heading`, to hold the DOM for the html elements meant to hold the headings for the articles
+    - four variables named `article1Section1`, `article1Section2`, `article2Section1`, and `article2Section2`, to hold the DOM for the html elements meant to hold the sections for each article
+- adds an event listener to the `document` object by using the method `addEventListener()`, to listen for the `DOMContentLoaded` event which triggers when the page is loaded
+- will run code when the event is detected to change the value of the `article1Number` and `article2Number` variables to the result of `Math.floor(Math.round() * 5) + 1`, which rounds down the random value generated by `Math.round()` multiplyed by 5, and adds 1 to the value
